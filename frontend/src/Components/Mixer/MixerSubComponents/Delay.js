@@ -1,5 +1,8 @@
 import React from "react";
 import "../../../Styles/mixerSubComponentStyles/delay.css";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
+
 
 /**
  * Delay component of mixer
@@ -17,7 +20,17 @@ const Delay = (props) => {
         <div id="delayContainer">
             <p id="delayP">Delay</p>
             <div className="delaySliderContainer">
+                <OverlayTrigger 
+                    placement="top"
+                    delay={{show: 100, hide: 4000}}
+                    overlay={
+                        <Tooltip id="tooltip-top" {...props}>
+                            Filler text for Time asdfsadfsadfasdfs
+                        </Tooltip>
+                    }    
+                >
                 <label className="delayLabel" htmlFor="delay.time">Time</label>
+                </OverlayTrigger>
                 <input
                     id="delay.time"
                     name="delay.time"
@@ -29,10 +42,30 @@ const Delay = (props) => {
                     value={fx.delay.time}
                     onChange={handleSetFx}
                 />
+                <OverlayTrigger 
+                    placement="top"
+                    delay={{show: 100, hide: 4000}}
+                    overlay={
+                        <Tooltip id="tooltip-top" {...props}>
+                            Filler text for time asdfsadfsadfasdfs
+                        </Tooltip>
+                    }    
+                >
                 <p className="delayLabel2">{fx.delay.time * 1000}ms</p>
+                </OverlayTrigger>
             </div>
             <div className="delaySliderContainer">
+            <OverlayTrigger 
+                    placement="top"
+                    delay={{show: 100, hide: 4000}}
+                    overlay={
+                        <Tooltip id="tooltip-top" {...props}>
+                            Filler text for Feedback asdfsadfsadfasdfs
+                        </Tooltip>
+                    }    
+                >
                 <label htmlFor="delay.feedback">Feedback</label>
+                </OverlayTrigger>
                 <input
                     id="delay.feedback"
                     name="delay.feedback"
@@ -44,10 +77,31 @@ const Delay = (props) => {
                     value={fx.delay.feedback}
                     onChange={handleSetFx}
                 />
+               <OverlayTrigger 
+                    placement="top"
+                    delay={{show: 100, hide: 4000}}
+                    overlay={
+                        <Tooltip id="tooltip-top" {...props}>
+                            Filler text for feedback % asdfsadfsadfasdfs
+                        </Tooltip>
+                    }       
+                >
                 <p>{(fx.delay.feedback * 100).toFixed(0)}%</p>
+                </OverlayTrigger>
             </div>
             <div className="delaySliderContainer">
+                <OverlayTrigger 
+                    placement="top"
+                    delay={{show: 100, hide: 4000}}
+                    overlay={
+                        <Tooltip id="tooltip-top" {...props}>
+                            Filler text for Dry asdfsadfsadfasdfs
+                        </Tooltip>
+                    }    
+                    
+                >
                 <label htmlFor="delay.dry">Dry</label>
+                </OverlayTrigger>
                 <input
                     id="delay.dry"
                     name="delay.dry"
@@ -59,10 +113,32 @@ const Delay = (props) => {
                     value={fx.delay.dry}
                     onChange={handleSetFx}
                 />
+               <OverlayTrigger 
+                    placement="top"
+                    delay={{show: 100, hide: 4000}}
+                    overlay={
+                        <Tooltip id="tooltip-top" {...props}>
+                            Filler text for dry % asdfsadfsadfasdfs
+                        </Tooltip>
+                    }    
+                    
+                >
                 <p>{(fx.delay.dry * 100).toFixed(0)}%</p>
+                </OverlayTrigger>
             </div>
             <div className="delaySliderContainer">
+                <OverlayTrigger 
+                    placement="top"
+                    delay={{show: 100, hide: 4000}}
+                    overlay={
+                        <Tooltip id="tooltip-top" {...props}>
+                            Filler text for Wet asdfsadfsadfasdfs
+                        </Tooltip>
+                    }    
+                    
+                >
                 <label htmlFor="delay.wet">Wet</label>
+                </OverlayTrigger>
                 <input
                     id="delay.wet" 
                     name="delay.wet" 
@@ -74,7 +150,17 @@ const Delay = (props) => {
                     value={fx.delay.wet}
                     onChange={handleSetFx}
                 />
+                <OverlayTrigger 
+                    placement="top"
+                    delay={{show: 100, hide: 4000}}
+                    overlay={
+                        <Tooltip id="tooltip-top" {...props}>
+                            Filler text for wet % asdfsadfsadfasdfs
+                        </Tooltip>
+                    }    
+                >
                 <p>{(fx.delay.wet * 100).toFixed(0)}%</p>
+                </OverlayTrigger>
             </div>
         </div>
     );
