@@ -19,9 +19,19 @@ const Compressor = (props) => {
         <div id="compressorContainer">
             <p id="compressorP">Compressor</p>
             <div className="compressorSliderContainer">
+                <OverlayTrigger 
+                    placement="top"
+                    delay={{show: 100, hide: 4000}}
+                    overlay={
+                        <Tooltip id="tooltip-top" {...props}>
+                            Filler text for Threshold asdfsadfsadfasdfs
+                        </Tooltip>
+                    }    
+                >
                 <label className="compressorLabel" htmlFor="compressor.threshold">
                     Threshold
                 </label>
+                </OverlayTrigger>
                 <input
                     id="compressor.threshold"
                     name="compressor.threshhold"
@@ -33,12 +43,32 @@ const Compressor = (props) => {
                     value={fx.compressor.threshold}
                     onChange={handleSetFx}
                 />
+                <OverlayTrigger 
+                    placement="top"
+                    delay={{show: 100, hide: 4000}}
+                    overlay={
+                        <Tooltip id="tooltip-top" {...props}>
+                            Filler text for Attack asdfsadfsadfasdfs
+                        </Tooltip>
+                    }    
+                >
                 <p className="compressorLabel2">
                     {fx.compressor.threshold}
-                </p>
+                </p>    
+                </OverlayTrigger>    
             </div>
             <div className="compressorSliderContainer">
+                <OverlayTrigger 
+                    placement="top"
+                    delay={{show: 100, hide: 4000}}
+                    overlay={
+                        <Tooltip id="tooltip-top" {...props}>
+                            Filler text for Ratio asdfsadfsadfasdfs
+                        </Tooltip>
+                    }    
+                >
                 <label htmlFor="compressor.ratio">Ratio</label>
+                </OverlayTrigger>
                 <input
                     id="compressor.ratio"
                     name="compressor.ratio"
@@ -50,12 +80,32 @@ const Compressor = (props) => {
                     value={fx.compressor.ratio}
                     onChange={handleSetFx}
                 />
+                <OverlayTrigger 
+                    placement="top"
+                    delay={{show: 100, hide: 4000}}
+                    overlay={
+                        <Tooltip id="tooltip-top" {...props}>
+                            Filler text for Attack asdfsadfsadfasdfs
+                        </Tooltip>
+                    }    
+                >
                 <p className="compressorLabel2">
                     1:{fx.compressor.ratio}
                 </p>
+                </OverlayTrigger>    
             </div>
             <div className="compressorSliderContainer">
+                <OverlayTrigger 
+                    placement="top"
+                    delay={{show: 100, hide: 4000}}
+                    overlay={
+                        <Tooltip id="tooltip-top" {...props}>
+                            Filler text for Attack asdfsadfsadfasdfs
+                        </Tooltip>
+                    }    
+                >    
                 <label htmlFor="compressor.attack">Attack</label>
+                </OverlayTrigger>
                 <input
                     id="compressor.attack"
                     name="compressor.attack"
@@ -67,12 +117,32 @@ const Compressor = (props) => {
                     value={fx.compressor.attack}
                     onChange={handleSetFx}
                 />
+                <OverlayTrigger 
+                    placement="top"
+                    delay={{show: 100, hide: 4000}}
+                    overlay={
+                        <Tooltip id="tooltip-top" {...props}>
+                            Filler text for Release asdfsadfsadfasdfs
+                        </Tooltip>
+                    }    
+                >
                 <p className="compressorLabel2">
                     {fx.compressor.attack * 1000}ms
                 </p>
+                </OverlayTrigger>
             </div>
             <div className="compressorSliderContainer">
+                <OverlayTrigger 
+                    placement="top"
+                    delay={{show: 100, hide: 4000}}
+                    overlay={
+                        <Tooltip id="tooltip-top" {...props}>
+                            Filler text for Release asdfsadfsadfasdfs
+                        </Tooltip>
+                    }    
+                >
                 <label htmlFor="compressor.release">Release</label>
+                </OverlayTrigger>
                 <input
                     id="compressor.release"
                     name="compressor.release"
@@ -84,9 +154,19 @@ const Compressor = (props) => {
                     value={fx.compressor.release}
                     onChange={handleSetFx}
                 />
+                <OverlayTrigger 
+                    placement="top"
+                    delay={{show: 100, hide: 4000}}
+                    overlay={
+                        <Tooltip id="tooltip-top" {...props}>
+                            Filler text for ms asdfsadfsadfasdfs
+                        </Tooltip>
+                    }    
+                >
                 <p className="compressorLabel2">
                     {fx.compressor.release * 1000}ms
                 </p>
+                </OverlayTrigger>
             </div>
         </div>
     );
