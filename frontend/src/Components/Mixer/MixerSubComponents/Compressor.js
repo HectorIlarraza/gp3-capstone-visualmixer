@@ -1,5 +1,7 @@
 import React from "react";
 import "../../../Styles/mixerSubComponentStyles/compressor.css";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
 
 /**
  * Compressor component of mixer
