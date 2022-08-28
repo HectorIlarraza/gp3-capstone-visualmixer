@@ -32,4 +32,6 @@
     font-size: 12px;
 }
 
-
+#tooltip-top{
+    position: absolute;
+}

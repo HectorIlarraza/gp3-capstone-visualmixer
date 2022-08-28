@@ -1,5 +1,7 @@
 import React from "react";
 import "../../../Styles/mixerSubComponentStyles/playSpeed.css";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
 
 /**
  * Play Speed component of mixer
@@ -16,9 +18,19 @@ const PlaySpeed = (props) => {
     return (
         <div id="playSpeedContainer">
             <div className="playSpeedSliderContainer">
+                <OverlayTrigger 
+                    placement="top"
+                    delay={{show: 100, hide: 4000}}
+                    overlay={
+                        <Tooltip id="tooltip-top" {...props}>
+                            Filler text for Speed asdfsadfsadfasdfs
+                        </Tooltip>
+                    }    
+                >
                 <label className="playSpeedLabel" htmlFor="speed.rate">
                     Speed
                 </label>
+                </OverlayTrigger>
                 <input
                     id="speed.rate"
                     name="speed.rate"
@@ -30,12 +42,32 @@ const PlaySpeed = (props) => {
                     value={fx.speed.rate}
                     onChange={handleSetFx}
                 />
+                <OverlayTrigger 
+                    placement="top"
+                    delay={{show: 100, hide: 4000}}
+                    overlay={
+                        <Tooltip id="tooltip-top" {...props}>
+                            Filler text for speed adjust asdfsadfsadfasdfs
+                        </Tooltip>
+                    }    
+                >
                 <p className="playSpeedLabel2">{fx.speed.rate}</p>
+                </OverlayTrigger>
             </div>
             <div className="playSpeedSliderContainer">
+                <OverlayTrigger 
+                    placement="top"
+                    delay={{show: 100, hide: 4000}}
+                    overlay={
+                        <Tooltip id="tooltip-top" {...props}>
+                            Filler text for Detune asdfsadfsadfasdfs
+                        </Tooltip>
+                    }    
+                >
                 <label className="playSpeedLabel" htmlFor="speed.detune">
                     Detune
                 </label>
+                </OverlayTrigger>
                 <input
                     id="speed.detune"
                     name="speed.detune"
@@ -47,7 +79,17 @@ const PlaySpeed = (props) => {
                     value={fx.speed.detune}
                     onChange={handleSetFx}
                 />
+                <OverlayTrigger 
+                    placement="top"
+                    delay={{show: 100, hide: 4000}}
+                    overlay={
+                        <Tooltip id="tooltip-top" {...props}>
+                            Filler text for detune adjust asdfsadfsadfasdfs
+                        </Tooltip>
+                    }    
+                >
                 <p id="playSpeedDetuneLabel">{fx.speed.detune} cents</p>
+                </OverlayTrigger>
             </div>
         </div>
     );
