@@ -106,6 +106,10 @@
     text-align: center;
 }
 
+#tooltip-top{
+    position: absolute;
+}
+
 /* BUTTONS */
 
 #playButton {
