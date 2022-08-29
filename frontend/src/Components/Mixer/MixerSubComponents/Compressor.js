@@ -17,14 +17,24 @@ const Compressor = (props) => {
 
     return (
         <div id="compressorContainer">
+            <OverlayTrigger 
+                placement="top"
+                delay={{show: 100, hide: 4000}}
+                overlay={
+                    <Tooltip id="tooltip-top" {...props}>
+                        Compression is the process of lessening the dynamic range between the loudest and quietest parts of an audio signal.
+                    </Tooltip>
+                }    
+            >
             <p id="compressorP">Compressor</p>
+            </OverlayTrigger>
             <div className="compressorSliderContainer">
                 <OverlayTrigger 
                     placement="top"
                     delay={{show: 100, hide: 4000}}
                     overlay={
                         <Tooltip id="tooltip-top" {...props}>
-                            Filler text for Threshold asdfsadfsadfasdfs
+                           The threshold relates to loudness, sets the level at which the compression effect kicks in.
                         </Tooltip>
                     }    
                 >
@@ -48,7 +58,7 @@ const Compressor = (props) => {
                     delay={{show: 100, hide: 4000}}
                     overlay={
                         <Tooltip id="tooltip-top" {...props}>
-                            Filler text for Attack asdfsadfsadfasdfs
+                            It is typically expressed in decibels "dB"
                         </Tooltip>
                     }    
                 >
@@ -63,7 +73,7 @@ const Compressor = (props) => {
                     delay={{show: 100, hide: 4000}}
                     overlay={
                         <Tooltip id="tooltip-top" {...props}>
-                            Filler text for Ratio asdfsadfsadfasdfs
+                           Ratio determines how much compression is applied. 
                         </Tooltip>
                     }    
                 >
@@ -85,7 +95,7 @@ const Compressor = (props) => {
                     delay={{show: 100, hide: 4000}}
                     overlay={
                         <Tooltip id="tooltip-top" {...props}>
-                            Filler text for Attack asdfsadfsadfasdfs
+                           With a 2:1 ratio, signals going 2db over the threshold are reduced to 1db
                         </Tooltip>
                     }    
                 >
@@ -100,7 +110,7 @@ const Compressor = (props) => {
                     delay={{show: 100, hide: 4000}}
                     overlay={
                         <Tooltip id="tooltip-top" {...props}>
-                            Filler text for Attack asdfsadfsadfasdfs
+                            Attack is how quickly the compressor will begin to act once the singal passes the threshold
                         </Tooltip>
                     }    
                 >    
@@ -122,7 +132,7 @@ const Compressor = (props) => {
                     delay={{show: 100, hide: 4000}}
                     overlay={
                         <Tooltip id="tooltip-top" {...props}>
-                            Filler text for Release asdfsadfsadfasdfs
+                            Uses milliseconds "ms" as amount to measure timing, if its set to 20ms it will take 20ms for the compressor to engage
                         </Tooltip>
                     }    
                 >
@@ -137,7 +147,7 @@ const Compressor = (props) => {
                     delay={{show: 100, hide: 4000}}
                     overlay={
                         <Tooltip id="tooltip-top" {...props}>
-                            Filler text for Release asdfsadfsadfasdfs
+                            Release determines how long it takes to for compressor to return to its normal volume after dropping back below the threshold
                         </Tooltip>
                     }    
                 >
@@ -159,7 +169,7 @@ const Compressor = (props) => {
                     delay={{show: 100, hide: 4000}}
                     overlay={
                         <Tooltip id="tooltip-top" {...props}>
-                            Filler text for ms asdfsadfsadfasdfs
+                            Similar to Attack it is also measured in "ms", if it is set to 100ms even when the sound goes below threshold, the sound will be compressed for an additional 0.1 secs 
                         </Tooltip>
                     }    
                 >

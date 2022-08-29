@@ -32,3 +32,7 @@
 #tooltip-top{
     position: absolute;
 }
+
+.tooltip-inner{
+    text-align: start;
+}
