@@ -18,14 +18,24 @@ const Delay = (props) => {
 
     return (
         <div id="delayContainer">
+            <OverlayTrigger 
+                placement="top"
+                delay={{show: 100, hide: 4000}}
+                overlay={
+                    <Tooltip id="tooltip-top" {...props}>
+                        Think of the phenomenon known as a "echo", when recreated artificially in the studio it is known as "Delay".
+                    </Tooltip>
+                }    
+            >
             <p id="delayP">Delay</p>
+            </OverlayTrigger>
             <div className="delaySliderContainer">
                 <OverlayTrigger 
                     placement="top"
                     delay={{show: 100, hide: 4000}}
                     overlay={
                         <Tooltip id="tooltip-top" {...props}>
-                            Filler text for Time asdfsadfsadfasdfs
+                            Time will set the frequency at which the time between each distinct repeat "sound" and the next
                         </Tooltip>
                     }    
                 >
@@ -47,7 +57,7 @@ const Delay = (props) => {
                     delay={{show: 100, hide: 4000}}
                     overlay={
                         <Tooltip id="tooltip-top" {...props}>
-                            Filler text for time asdfsadfsadfasdfs
+                            If you adjust your song delay with a delay time of 200 ms, you would hear that same song 200 ms later. Delay times are usually either in ms or beat divisions
                         </Tooltip>
                     }    
                 >
@@ -60,7 +70,7 @@ const Delay = (props) => {
                     delay={{show: 100, hide: 4000}}
                     overlay={
                         <Tooltip id="tooltip-top" {...props}>
-                            Filler text for Feedback asdfsadfsadfasdfs
+                            Feedback is how much of the signal is fed back through the effect, creating more echoes
                         </Tooltip>
                     }    
                 >
@@ -82,7 +92,7 @@ const Delay = (props) => {
                     delay={{show: 100, hide: 4000}}
                     overlay={
                         <Tooltip id="tooltip-top" {...props}>
-                            Filler text for feedback % asdfsadfsadfasdfs
+                            At 100% feedback, the signal will continue echoing forever, getting louder over time, until the feedback loop turns it into noise. If you want the sound to die out faster, keep the feedback lower.
                         </Tooltip>
                     }       
                 >
@@ -95,7 +105,7 @@ const Delay = (props) => {
                     delay={{show: 100, hide: 4000}}
                     overlay={
                         <Tooltip id="tooltip-top" {...props}>
-                            Filler text for Dry asdfsadfsadfasdfs
+                            Dry is ONLY the volume of initial sound
                         </Tooltip>
                     }    
                     
@@ -118,7 +128,7 @@ const Delay = (props) => {
                     delay={{show: 100, hide: 4000}}
                     overlay={
                         <Tooltip id="tooltip-top" {...props}>
-                            Filler text for dry % asdfsadfsadfasdfs
+                            If you were 100% dry, you would hear no echoes.
                         </Tooltip>
                     }    
                     
@@ -132,7 +142,7 @@ const Delay = (props) => {
                     delay={{show: 100, hide: 4000}}
                     overlay={
                         <Tooltip id="tooltip-top" {...props}>
-                            Filler text for Wet asdfsadfsadfasdfs
+                            Wet is the volume of each repeat
                         </Tooltip>
                     }    
                     
@@ -155,7 +165,7 @@ const Delay = (props) => {
                     delay={{show: 100, hide: 4000}}
                     overlay={
                         <Tooltip id="tooltip-top" {...props}>
-                            Filler text for wet % asdfsadfsadfasdfs
+                            If you are on 100% wet, you'll only hear the repeats.
                         </Tooltip>
                     }    
                 >
