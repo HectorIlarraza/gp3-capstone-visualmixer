@@ -45,7 +45,7 @@ const Eq = (props) => {
                 <div className="eqFrequency">
                 <OverlayTrigger 
                     placement="top"
-                    delay={{show: 100, hide: 4000}}
+                    delay={{show: 1500, hide: 200}}
                     overlay={
                         <Tooltip id="tooltip-top" {...props}>
                             Filler text for EQ1 Frequency asdfsadfsadfasdfs

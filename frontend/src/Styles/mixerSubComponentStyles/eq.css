@@ -110,6 +110,10 @@
     position: absolute;
 }
 
+.tooltip-inner{
+    text-align: start;
+}
+
 /* BUTTONS */
 
 #playButton {
