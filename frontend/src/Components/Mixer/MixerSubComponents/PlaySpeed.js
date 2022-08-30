@@ -23,7 +23,7 @@ const PlaySpeed = (props) => {
                     delay={{show: 100, hide: 4000}}
                     overlay={
                         <Tooltip id="tooltip-top" {...props}>
-                            Filler text for Speed asdfsadfsadfasdfs
+                            Speed is the process of changing the speed or duration of a song.
                         </Tooltip>
                     }    
                 >
@@ -47,7 +47,7 @@ const PlaySpeed = (props) => {
                     delay={{show: 100, hide: 4000}}
                     overlay={
                         <Tooltip id="tooltip-top" {...props}>
-                            Filler text for speed adjust asdfsadfsadfasdfs
+                            Adjusting the speed to slow down the song to increase the duration, lowers the pitch creating the Chopped effect. Speeding it up for a shorter duration also raises the pitch creating the Chipmunk effect.
                         </Tooltip>
                     }    
                 >
@@ -60,7 +60,7 @@ const PlaySpeed = (props) => {
                     delay={{show: 100, hide: 4000}}
                     overlay={
                         <Tooltip id="tooltip-top" {...props}>
-                            Filler text for Detune asdfsadfsadfasdfs
+                            Detune is to intentionally lower or raise the pitch produced by a musical instrument. Often done to produce sounds not normally possible.
                         </Tooltip>
                     }    
                 >
@@ -84,7 +84,7 @@ const PlaySpeed = (props) => {
                     delay={{show: 100, hide: 4000}}
                     overlay={
                         <Tooltip id="tooltip-top" {...props}>
-                            Filler text for detune adjust asdfsadfsadfasdfs
+                            Detune is measured in cents, By specifying a detune of 1200, you move up an octave. Specifying a detune of −1200 moves you down an octave.
                         </Tooltip>
                     }    
                 >

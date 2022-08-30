@@ -128,7 +128,7 @@ const Delay = (props) => {
                     delay={{show: 100, hide: 4000}}
                     overlay={
                         <Tooltip id="tooltip-top" {...props}>
-                            If you were 100% dry, you would hear no echoes.
+                            If its 100% dry, you would hear no echoes.
                         </Tooltip>
                     }    
                     
@@ -165,7 +165,7 @@ const Delay = (props) => {
                     delay={{show: 100, hide: 4000}}
                     overlay={
                         <Tooltip id="tooltip-top" {...props}>
-                            If you are on 100% wet, you'll only hear the repeats.
+                            If its on 100% wet, you'll only hear the repeats.
                         </Tooltip>
                     }    
                 >
