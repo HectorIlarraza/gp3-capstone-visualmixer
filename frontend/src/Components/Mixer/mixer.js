@@ -45,7 +45,7 @@ const Mixer = ({
             setFx(storedFx);
             localStorage.setItem("temp_fx", null);
         }
-    }, []);
+    }, []); //eslint-disable-line
 
     /**
      * handles onChange event from all inputs in the mixer
@@ -126,8 +126,9 @@ const Mixer = ({
                 const existContent = await existResponse.json();
 
                 existContent ? (method = "PUT") : (method = "POST");
-
-                const response = await fetch(`${API}/effects`, {
+                
+                //TODO: add error checking if mix failed to save
+                await fetch(`${API}/effects`, {
                     method: method,
                     headers: {
                         Accept: "application/json",
@@ -136,7 +137,7 @@ const Mixer = ({
                     },
                     body: JSON.stringify(data),
                 });
-                const content = await response.json();
+                //const content = await response.json();
 
                 if (playState.state === "playing") {
                     stopTimerandReset();

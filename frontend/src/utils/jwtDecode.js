@@ -22,7 +22,7 @@ function base64_url_decode(str) {
             output += "=";
             break;
         default:
-            throw "Illegal base64url string!";
+            throw new Error("Illegal base64url string!");
     }
 
     try {

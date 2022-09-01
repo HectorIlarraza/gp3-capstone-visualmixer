@@ -19,42 +19,39 @@ const UserProvider = ({ children }) => {
         accessToken: "",
     });
 
+    let navigate = useNavigate();
 
-     let navigate = useNavigate();
+    //AUTO LOGIN IF THERE'S A LEGIT REFRESH TOKEN COOKIE
+    useEffect(() => {
+        if (localStorage.getItem("active") && !userDetails.accessToken) {
+            fetch(`${API}/user/refresh_token`, {
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                mode: "cors",
+                credentials: "include",
+            })
+                .then((response) => response.json())
+                .then((tokens) => {
+                    // DECODE
+                    let decodedUser = jwtDecode(tokens.accessToken);
 
-     //AUTO LOGIN IF THERE'S A LEGIT REFRESH TOKEN COOKIE
-     useEffect(() => {
-         if (localStorage.getItem("active") && !userDetails.accessToken) {
-             fetch(`${API}/user/refresh_token`, {
-                 headers: {
-                     "Content-Type": "application/json",
-                 },
-                 mode: "cors",
-                 credentials: "include",
-             })
-                 .then((response) => response.json())
-                 .then((tokens) => {
-                     // DECODE
-                     let decodedUser = jwtDecode(tokens.accessToken);
-
-                     // SET USER INFO IN STATE
-                     setUserDetails({
-                         username: decodedUser.username,
-                         user_id: decodedUser.user_id,
-                         accessToken: tokens.accessToken,
-                     });
-                 })
-                 .catch((error) => {
-                     return navigate("/login");
-                 });
-         }
-     }, []);
-
-      
+                    // SET USER INFO IN STATE
+                    setUserDetails({
+                        username: decodedUser.username,
+                        user_id: decodedUser.user_id,
+                        accessToken: tokens.accessToken,
+                    });
+                })
+                .catch((error) => {
+                    return navigate("/login");
+                });
+        }
+    }, []); //eslint-disable-line
 
     return (
         <UserContext.Provider value={[userDetails, setUserDetails]}>
-                {children}
+            {children}
         </UserContext.Provider>
     );
 };

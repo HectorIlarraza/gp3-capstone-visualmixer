@@ -23,7 +23,7 @@ export default function Dropdown() {
 
         //FETCH
         const removeCookie = async () => {
-            let removed = await fetch(`${API}/user/refresh_token`, {
+            await fetch(`${API}/user/refresh_token`, {
                 method: "DELETE",
                 credentials: "include",
             });
@@ -58,7 +58,7 @@ export default function Dropdown() {
                     <a className="dropdown-item" href="/mixer">
                         Make a Mix
                     </a>
-                    <a className="dropdown-item" onClick={handleSignOut}>
+                    <a className="dropdown-item" href='/' onClick={handleSignOut}>
                         Signout
                     </a>
                 </div>

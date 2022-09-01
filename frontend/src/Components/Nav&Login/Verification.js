@@ -9,7 +9,7 @@ export default function Verification() {
 
     useEffect(() => {
         const userVerificationPost = async (id) => {
-            let response = await fetch(`${API}/user/verify/${id}`, {
+            await fetch(`${API}/user/verify/${id}`, {
                 method: "PATCH",
             });
         };
@@ -19,6 +19,6 @@ export default function Verification() {
         } catch (error) {
             console.log(error);
         }
-    }, []);
+    }, []); //eslint-disable-line
     return;
 }

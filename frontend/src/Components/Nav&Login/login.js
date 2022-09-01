@@ -20,7 +20,7 @@ function Login() {
         if (userDetails.accessToken) {
             navigate("/");
         }
-    }, [userDetails]);
+    }, [userDetails]); //eslint-disable-line
 
     // handleChange for input elements
     const handleChange = (event) => {

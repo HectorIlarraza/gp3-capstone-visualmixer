@@ -1,12 +1,10 @@
 import React from "react";
 import {
-    Navbar,
     Row,
     Col,
     Container,
     Popover,
     OverlayTrigger,
-    Button,
 } from "react-bootstrap";
 
 import { Time } from "../Mixer/MixerSubComponents/Time.js";

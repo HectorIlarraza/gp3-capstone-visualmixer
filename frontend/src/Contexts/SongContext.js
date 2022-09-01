@@ -15,17 +15,17 @@ const TrackProvider = ({ children }) => {
             fetch(`${API}/audio/today`)
                 .then((response) => response.json())
                 .then((data) => {
-                    setTodaysTrack(data); 
+                    setTodaysTrack(data);
                 })
                 .catch((err) => console.log(err));
         }
-    }, []);
+    }, []); //eslint-disable-line
 
     return (
         <TrackContext.Provider value={[todaysTrack, setTodaysTrack]}>
             {children}
         </TrackContext.Provider>
-    )
+    );
 };
 
 export {TrackProvider, useTrack};

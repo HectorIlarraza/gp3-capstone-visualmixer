@@ -1,6 +1,6 @@
 // DEPENDENCIES
 import { Routes, Route } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 // COMPONENTS
 import SignUp from "./Components/Nav&Login/signUp";
@@ -18,7 +18,7 @@ import { TrackProvider } from "./Contexts/SongContext";
 
 function App() {
     const [popupBtn, setPopupBtn] = useState(false);
-    const [loading, setLoading] = useState(false);
+    const [loading] = useState(false);
 
     return (
         <UserProvider>

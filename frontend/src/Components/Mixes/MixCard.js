@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Card, Container, Row, Col, OverlayTrigger } from "react-bootstrap";
+import { Card, Container, Row, Col } from "react-bootstrap";
 
 import "../../Styles/mixCard.css";
 
@@ -17,7 +17,7 @@ const MixCard = ({
 }) => {
     const [hovered, setHovered] = useState(false);
     const [votes, setVotes] = useState(() => effect.totalvotes);
-    const [imageSource, setImageSource] = useState(() => albumArt);
+    const [imageSource] = useState(() => albumArt);
 
     const navigate = useNavigate();
 
@@ -31,7 +31,7 @@ const MixCard = ({
         fetch(`${API}/effects/${effect.effects_id}/${votes}`, requestOptions)
             .then((response) => response.text())
             .catch((error) => console.log("error", error));
-    }, [votes]);
+    }, [votes]); //eslint-disable-line
 
     const handleClick = () => {
         if (userDetails.user_id) {

@@ -1,11 +1,10 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { useUser } from "../../Contexts/UserContext.js";
 import { useTrack } from "../../Contexts/SongContext.js";
 import { Container, Row, Col, Modal, Button } from "react-bootstrap";
 
 import { MixCard } from "./MixCard.js";
 import { Transport } from "./Transport.js";
-import { secondsTillMidnight } from "../../utils/countdown.js";
 import { generatePhotoArray } from "../../utils/randomizeArtwork";
 
 import "../../Styles/mixes.css";
@@ -23,9 +22,9 @@ const Mixes = ({
     playPause,
     handleSeek,
 }) => {
-    const [countdown, setCountdown] = useState(() => 0);
+    const [countdown] = useState(() => 0);
     const [show, setShow] = useState(false);
-    const [albumArt, setAlbumArt] = useState(() => generatePhotoArray());
+    const [albumArt] = useState(() => generatePhotoArray());
     const [userDetails] = useUser();
     const [todaysTrack] = useTrack();
 
@@ -85,30 +84,11 @@ const Mixes = ({
                     .catch((error) => console.log("error", error));
             }
         }
-    }, [todaysTrack]);
-
-    // countdown to next song timer
-    useEffect(() => {
-        // THIS IS CAUSING LOTS OF RE RENDERS ??
-        // if (!countdownTimer.current) {
-        //     countdownTimer.current = setInterval(() => {
-        //         const secondsLeft = secondsTillMidnight();
-        //         const hoursLeft = Math.floor(secondsLeft / 60 / 60);
-        //         const minsLeft = Math.floor((secondsLeft / 60) % 60);
-        //         const secsLeft = Math.floor(
-        //             secondsLeft - hoursLeft * 60 * 60 - minsLeft * 60
-        //         );
-        //         setCountdown(
-        //             `${hoursLeft}:${
-        //                 minsLeft < 10 ? `0${minsLeft}` : `${minsLeft}`
-        //             }:${secsLeft < 10 ? `0${secsLeft}` : `${secsLeft}`}`
-        //         );
-        //     }, 1000);
-        // }
-    }, []);
+    }, [todaysTrack]); //eslint-disable-line
 
     const handleUserChange = (user) => {
         for (let mix of effects) {
+            //eslint-disable-next-line
             if (mix.user_id == user) {
                 setFx(mix.effects_data);
             }

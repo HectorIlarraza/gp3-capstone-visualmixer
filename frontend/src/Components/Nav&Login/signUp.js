@@ -20,10 +20,10 @@ function SignUp() {
     //If user is already logged in redirect to '/'
     useEffect(() => {
         if (userDetails.user_id) {
-            console.log ('redirect to home from signup')
+            console.log("redirect to home from signup");
             navigate("/");
         }
-    }, []);
+    }, []); //eslint-disable-line
 
     const handleChange = (event) => {
         setUser({ ...user, [event.target.id]: event.target.value });
