@@ -7,7 +7,7 @@ import { Mixes } from "../Mixes/Mixes";
 
 import "../../Styles/faders.css";
 
-const AudioPlayer = ({ showSplash, mixes }) => {
+const AudioPlayer = ({ mixes }) => {
     /**
      * play/pause - boolean state for play/pause toggling
      * playstate - object state for tracking the current play state (e.g. 'playing', 'paused')
@@ -58,52 +58,6 @@ const AudioPlayer = ({ showSplash, mixes }) => {
 
     //Ref for master out
     const masterOutNode = useRef();
-
-    //trigger song fetch after a user interaction has occurred
-    useEffect(() => {
-        if (!showSplash && todaysTrack.audio_key) {
-            //Create audio context
-            ctx.current = new (window.AudioContext ||
-                window.webkitAudioContext)();
-
-            //Create Delay Nodes
-            delayNode.current = ctx.current.createDelay();
-            feedbackNode.current = ctx.current.createGain();
-            dryNode.current = ctx.current.createGain();
-            wetNode.current = ctx.current.createGain();
-            delayOutNode.current = ctx.current.createGain();
-
-            // //Create Analyser Node
-            analyserNode.current = ctx.current.createAnalyser();
-
-            // //Create Filter Nodes
-            band1.current = ctx.current.createBiquadFilter();
-            band2.current = ctx.current.createBiquadFilter();
-            band3.current = ctx.current.createBiquadFilter();
-            band4.current = ctx.current.createBiquadFilter();
-            band5.current = ctx.current.createBiquadFilter();
-
-            // Changing default filters
-            band1.current.type = "lowshelf";
-            band2.current.type = "peaking";
-            band3.current.type = "peaking";
-            band4.current.type = "peaking";
-            band5.current.type = "highshelf";
-
-            // //Create Compressor Node
-            compressorNode.current = ctx.current.createDynamicsCompressor();
-
-            // Create Master Out Node
-            masterOutNode.current = ctx.current.createGain();
-
-            //Fetch Song from Server and decode audio for playback
-            fetch(todaysTrack.audio_key)
-                .then((data) => data.arrayBuffer())
-                .then((arrayBuffer) => ctx.current.decodeAudioData(arrayBuffer))
-                .then((decodedAudio) => createTrackNode(decodedAudio))
-                .catch((err) => console.log(err));
-        }
-    }, [showSplash, todaysTrack]);
 
     /**
      * Creates a track node from decoded audio
@@ -172,6 +126,53 @@ const AudioPlayer = ({ showSplash, mixes }) => {
         masterOutNode.current.connect(ctx.current.destination);
     };
 
+    //trigger song fetch after a user interaction has occurred
+    useEffect(() => {
+        if (todaysTrack.audio_key) {
+            //Create audio context
+            ctx.current = new (window.AudioContext ||
+                window.webkitAudioContext)();
+
+            //Create Delay Nodes
+            delayNode.current = ctx.current.createDelay();
+            feedbackNode.current = ctx.current.createGain();
+            dryNode.current = ctx.current.createGain();
+            wetNode.current = ctx.current.createGain();
+            delayOutNode.current = ctx.current.createGain();
+
+            // //Create Analyser Node
+            analyserNode.current = ctx.current.createAnalyser();
+
+            // //Create Filter Nodes
+            band1.current = ctx.current.createBiquadFilter();
+            band2.current = ctx.current.createBiquadFilter();
+            band3.current = ctx.current.createBiquadFilter();
+            band4.current = ctx.current.createBiquadFilter();
+            band5.current = ctx.current.createBiquadFilter();
+
+            // Changing default filters
+            band1.current.type = "lowshelf";
+            band2.current.type = "peaking";
+            band3.current.type = "peaking";
+            band4.current.type = "peaking";
+            band5.current.type = "highshelf";
+
+            // //Create Compressor Node
+            compressorNode.current = ctx.current.createDynamicsCompressor();
+
+            // Create Master Out Node
+            masterOutNode.current = ctx.current.createGain();
+
+            //Fetch Song from Server and decode audio for playback
+            fetch(todaysTrack.audio_key)
+                .then((data) => data.arrayBuffer())
+                .then((arrayBuffer) => ctx.current.decodeAudioData(arrayBuffer))
+                .then((decodedAudio) => createTrackNode(decodedAudio))
+                .catch((err) => console.log(err));
+        }
+        //TODO: react dependency warning
+    }, [todaysTrack]); //eslint-disable-line
+
     /**
      * Updates settings of audio nodes when FX state changes
      * FX state will change from user inputs OR if there are fx
@@ -214,7 +215,7 @@ const AudioPlayer = ({ showSplash, mixes }) => {
         if (todaysTrack) {
             masterOutNode.current.gain.value = Number(volume);
         }
-    }, [volume]);
+    }, [volume, todaysTrack]);
 
     // stops and starts the timer when speed is changed to prevent stale variables in interval
     useEffect(() => {
@@ -222,7 +223,7 @@ const AudioPlayer = ({ showSplash, mixes }) => {
             stopTimer();
             startTimer();
         }
-    }, [fx.speed.rate, fx.speed.detune]);
+    }, [fx.speed.rate, fx.speed.detune]); //eslint-disable-line
 
     /**
      * Creates an interval function to update the timer if song is playing
@@ -292,7 +293,7 @@ const AudioPlayer = ({ showSplash, mixes }) => {
                 startTimer();
             }
         }
-    }, [time.current]);
+    }, [time.current]); //eslint-disable-line
 
     /**
      * handles onClick event from Play/Pause button
