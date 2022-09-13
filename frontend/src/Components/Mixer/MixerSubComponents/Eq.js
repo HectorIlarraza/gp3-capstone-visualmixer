@@ -20,9 +20,8 @@ const Eq = (props) => {
             <div id="eqBand1" className="eqBand">
                 <OverlayTrigger 
                     placement="top"
-                    delay={{show: 100, hide: 4000}}
                     overlay={
-                        <Tooltip id="tooltip-top" {...props}>
+                        <Tooltip className="tooltip-top" id="eq1_gain_id">
                             Filler text for EQ1 Gain asdfsadfsadfasdfs
                         </Tooltip>
                     }    
@@ -47,7 +46,7 @@ const Eq = (props) => {
                     placement="top"
                     delay={{show: 1500, hide: 200}}
                     overlay={
-                        <Tooltip id="tooltip-top" {...props}>
+                        <Tooltip className="tooltip-top" id="eq1_freq_id">
                             Filler text for EQ1 Frequency asdfsadfsadfasdfs
                         </Tooltip>
                     }    
@@ -72,9 +71,8 @@ const Eq = (props) => {
             <div id="eqBand2" className="eqBand">
                 <OverlayTrigger 
                     placement="top"
-                    delay={{show: 100, hide: 4000}}
                     overlay={
-                        <Tooltip id="tooltip-top" {...props}>
+                        <Tooltip className="tooltip-top" id="eq2_gain_id">
                             Filler text for EQ2 Gain asdfsadfsadfasdfs
                         </Tooltip>
                     }    
@@ -97,9 +95,8 @@ const Eq = (props) => {
                 <div className="eqFrequency">
                 <OverlayTrigger 
                     placement="top"
-                    delay={{show: 100, hide: 4000}}
                     overlay={
-                        <Tooltip id="tooltip-top" {...props}>
+                        <Tooltip className="tooltip-top" id="eq2_freq_id">
                             Filler text for EQ2 Frequency asdfsadfsadfasdfs
                         </Tooltip>
                     }    
@@ -124,9 +121,8 @@ const Eq = (props) => {
             <div id="eqBand3" className="eqBand">
                 <OverlayTrigger 
                     placement="top"
-                    delay={{show: 100, hide: 4000}}
                     overlay={
-                        <Tooltip id="tooltip-top" {...props}>
+                        <Tooltip className="tooltip-top" id="eq3_gain_id">
                             Filler text for EQ3 Gain asdfsadfsadfasdfs
                         </Tooltip>
                     }    
@@ -149,9 +145,8 @@ const Eq = (props) => {
                 <div className="eqFrequency">
                 <OverlayTrigger 
                     placement="top"
-                    delay={{show: 100, hide: 4000}}
                     overlay={
-                        <Tooltip id="tooltip-top" {...props}>
+                        <Tooltip className="tooltip-top" id="eq3_freq_id">
                             Filler text for EQ3 Frequency asdfsadfsadfasdfs
                         </Tooltip>
                     }    
@@ -176,9 +171,8 @@ const Eq = (props) => {
             <div id="eqBand4" className="eqBand">
                 <OverlayTrigger 
                     placement="top"
-                    delay={{show: 100, hide: 4000}}
                     overlay={
-                        <Tooltip id="tooltip-top" {...props}>
+                        <Tooltip className="tooltip-top" id="eq4_gain_id">
                             Filler text for EQ4 Gain asdfsadfsadfasdfs
                         </Tooltip>
                     }    
@@ -201,9 +195,8 @@ const Eq = (props) => {
                 <div className="eqFrequency">
                 <OverlayTrigger 
                     placement="top"
-                    delay={{show: 100, hide: 4000}}
                     overlay={
-                        <Tooltip id="tooltip-top" {...props}>
+                        <Tooltip className="tooltip-top" id="eq4_freq_id">
                             Filler text for EQ4 Frequency asdfsadfsadfasdfs
                         </Tooltip>
                     }    
@@ -228,9 +221,8 @@ const Eq = (props) => {
             <div id="eqBand5" className="eqBand">
                 <OverlayTrigger 
                     placement="top"
-                    delay={{show: 100, hide: 4000}}
                     overlay={
-                        <Tooltip id="tooltip-top" {...props}>
+                        <Tooltip className="tooltip-top" id="eq5_gain_id">
                             Filler text for EQ5 Gain asdfsadfsadfasdfs
                         </Tooltip>
                     }    
@@ -253,9 +245,8 @@ const Eq = (props) => {
                 <div className="eqFrequency">
                 <OverlayTrigger 
                     placement="top"
-                    delay={{show: 100, hide: 4000}}
                     overlay={
-                        <Tooltip id="tooltip-top" {...props}>
+                        <Tooltip className="tooltip-top" id="eq5_freq_id">
                             Filler text for EQ5 Frequency asdfsadfsadfasdfs
                         </Tooltip>
                     }    

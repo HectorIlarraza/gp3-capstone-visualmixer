@@ -20,9 +20,8 @@ const Delay = (props) => {
         <div id="delayContainer">
             <OverlayTrigger 
                 placement="top"
-                delay={{show: 100, hide: 4000}}
                 overlay={
-                    <Tooltip id="tooltip-top" {...props}>
+                    <Tooltip className="tooltip-top" id="delay_id">
                         Think of the phenomenon known as a "echo", when recreated artificially in the studio it is known as "Delay".
                     </Tooltip>
                 }    
@@ -32,9 +31,8 @@ const Delay = (props) => {
             <div className="delaySliderContainer">
                 <OverlayTrigger 
                     placement="top"
-                    delay={{show: 100, hide: 4000}}
                     overlay={
-                        <Tooltip id="tooltip-top" {...props}>
+                        <Tooltip className="tooltip-top" id="time-id">
                             Time will set the frequency at which the time between each distinct repeat "sound" and the next
                         </Tooltip>
                     }    
@@ -54,9 +52,8 @@ const Delay = (props) => {
                 />
                 <OverlayTrigger 
                     placement="top"
-                    delay={{show: 100, hide: 4000}}
                     overlay={
-                        <Tooltip id="tooltip-top" {...props}>
+                        <Tooltip className="tooltip-top" id="time_id">
                             If you adjust your song delay with a delay time of 200 ms, you would hear that same song 200 ms later. Delay times are usually either in ms or beat divisions
                         </Tooltip>
                     }    
@@ -67,9 +64,8 @@ const Delay = (props) => {
             <div className="delaySliderContainer">
             <OverlayTrigger 
                     placement="top"
-                    delay={{show: 100, hide: 4000}}
                     overlay={
-                        <Tooltip id="tooltip-top" {...props}>
+                        <Tooltip className="tooltip-top" id="feedback_id">
                             Feedback is how much of the signal is fed back through the effect, creating more echoes
                         </Tooltip>
                     }    
@@ -89,9 +85,8 @@ const Delay = (props) => {
                 />
                <OverlayTrigger 
                     placement="top"
-                    delay={{show: 100, hide: 4000}}
                     overlay={
-                        <Tooltip id="tooltip-top" {...props}>
+                        <Tooltip className="tooltip-top" id="feedback_id">
                             At 100% feedback, the signal will continue echoing forever, getting louder over time, until the feedback loop turns it into noise. If you want the sound to die out faster, keep the feedback lower.
                         </Tooltip>
                     }       
@@ -102,9 +97,8 @@ const Delay = (props) => {
             <div className="delaySliderContainer">
                 <OverlayTrigger 
                     placement="top"
-                    delay={{show: 100, hide: 4000}}
                     overlay={
-                        <Tooltip id="tooltip-top" {...props}>
+                        <Tooltip className="tooltip-top" id="dry_id">
                             Dry is ONLY the volume of initial sound
                         </Tooltip>
                     }    
@@ -125,9 +119,8 @@ const Delay = (props) => {
                 />
                <OverlayTrigger 
                     placement="top"
-                    delay={{show: 100, hide: 4000}}
                     overlay={
-                        <Tooltip id="tooltip-top" {...props}>
+                        <Tooltip className="tooltip-top" id="dry_id">
                             If its 100% dry, you would hear no echoes.
                         </Tooltip>
                     }    
@@ -139,9 +132,8 @@ const Delay = (props) => {
             <div className="delaySliderContainer">
                 <OverlayTrigger 
                     placement="top"
-                    delay={{show: 100, hide: 4000}}
                     overlay={
-                        <Tooltip id="tooltip-top" {...props}>
+                        <Tooltip className="tooltip-top" id="wet_id">
                             Wet is the volume of each repeat
                         </Tooltip>
                     }    
@@ -162,9 +154,8 @@ const Delay = (props) => {
                 />
                 <OverlayTrigger 
                     placement="top"
-                    delay={{show: 100, hide: 4000}}
                     overlay={
-                        <Tooltip id="tooltip-top" {...props}>
+                        <Tooltip className="tooltip-top" id="wet_id">
                             If its on 100% wet, you'll only hear the repeats.
                         </Tooltip>
                     }    
