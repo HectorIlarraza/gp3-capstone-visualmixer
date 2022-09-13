@@ -29,3 +29,11 @@
     grid-template-columns: 20% 65% 15%;
     grid-template-rows: 25% 25% 25% 25%;
 }
+
+#tooltip-top{
+    position: absolute;
+}
+
+.tooltip-inner{
+    text-align: start;
+}

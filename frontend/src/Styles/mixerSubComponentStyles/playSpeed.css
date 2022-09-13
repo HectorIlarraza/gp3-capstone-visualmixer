@@ -32,4 +32,10 @@
     font-size: 12px;
 }
 
+#tooltip-top{
+    position: absolute;
+}
 
+.tooltip-inner{
+    text-align: start;
+}
