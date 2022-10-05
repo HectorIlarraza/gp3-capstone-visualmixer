@@ -13,7 +13,7 @@ import Tooltip from "react-bootstrap/Tooltip";
  */
 const Compressor = (props) => {
 
-    const [currentToolTip, setCurrentToolTip] = useState(null)
+    const [currentToolTip] = useState(null)
     const fx = props.fx;
     const handleSetFx = props.handleSetFx;
 
