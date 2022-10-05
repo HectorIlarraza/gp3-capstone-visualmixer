@@ -25,6 +25,7 @@ const Compressor = (props) => {
             <OverlayTrigger 
                 placement="top"
                 show={currentToolTip === "compression_id"}
+                delay={{show: 500, hide: 100}}
                 overlay={
                     <Tooltip className="tooltip-top" id="compression_id">
                         Compression is the process of lessening the dynamic range between the loudest and quietest parts of an audio signal.
@@ -60,6 +61,7 @@ const Compressor = (props) => {
                 />
                 <OverlayTrigger 
                     placement="top"
+                    delay={{show: 500, hide: 100}}
                     overlay={
                         <Tooltip className="tooltip-top" id="threshold_id">
                             It is typically expressed in decibels "dB"
@@ -74,6 +76,7 @@ const Compressor = (props) => {
             <div className="compressorSliderContainer">
                 <OverlayTrigger 
                     placement="top"
+                    delay={{show: 500, hide: 100}}
                     overlay={
                         <Tooltip className="tooltip-top" id="ratio_id">
                            Ratio determines how much compression is applied. 
@@ -95,6 +98,7 @@ const Compressor = (props) => {
                 />
                 <OverlayTrigger 
                     placement="top"
+                    delay={{show: 500, hide: 100}}
                     overlay={
                         <Tooltip className="tooltip-top" id="ratio_id">
                            With a 2:1 ratio, signals going 2db over the threshold are reduced to 1db
@@ -109,6 +113,7 @@ const Compressor = (props) => {
             <div className="compressorSliderContainer">
                 <OverlayTrigger 
                     placement="top"
+                    delay={{show: 500, hide: 100}}
                     overlay={
                         <Tooltip className="tooltip-top" id="attack_id">
                             Attack is how quickly the compressor will begin to act once the singal passes the threshold
@@ -130,6 +135,7 @@ const Compressor = (props) => {
                 />
                 <OverlayTrigger 
                     placement="top"
+                    delay={{show: 500, hide: 100}}
                     overlay={
                         <Tooltip className="tooltip-top" id="attack_id">
                             Uses milliseconds "ms" as amount to measure timing, if its set to 20ms it will take 20ms for the compressor to engage
@@ -144,6 +150,7 @@ const Compressor = (props) => {
             <div className="compressorSliderContainer">
                 <OverlayTrigger 
                     placement="top"
+                    delay={{show: 500, hide: 100}}
                     overlay={
                         <Tooltip className="tooltip-top" id="release-id">
                             Release determines how long it takes to for compressor to return to its normal volume after dropping back below the threshold
@@ -165,6 +172,7 @@ const Compressor = (props) => {
                 />
                 <OverlayTrigger 
                     placement="top"
+                    delay={{show: 500, hide: 100}}
                     overlay={
                         <Tooltip className="tooltip-top" id="release-id">
                             Similar to Attack it is also measured in "ms", if it is set to 100ms even when the sound goes below threshold, the sound will be compressed for an additional 0.1 secs 

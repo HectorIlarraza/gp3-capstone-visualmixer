@@ -20,6 +20,7 @@ const PlaySpeed = (props) => {
             <div className="playSpeedSliderContainer">
                 <OverlayTrigger 
                     placement="top"
+                    delay={{show: 500, hide: 100}}
                     overlay={
                         <Tooltip className="tooltip-top" id="speed_id">
                             Speed is the process of changing the speed or duration of a song.
@@ -43,6 +44,7 @@ const PlaySpeed = (props) => {
                 />
                 <OverlayTrigger 
                     placement="top"
+                    delay={{show: 500, hide: 100}}
                     overlay={
                         <Tooltip className="tooltip-top" id="speed_id">
                             Adjusting the speed to slow down the song to increase the duration, lowers the pitch creating the Chopped effect. Speeding it up for a shorter duration also raises the pitch creating the Chipmunk effect.
@@ -55,6 +57,7 @@ const PlaySpeed = (props) => {
             <div className="playSpeedSliderContainer">
                 <OverlayTrigger 
                     placement="top"
+                    delay={{show: 500, hide: 100}}
                     overlay={
                         <Tooltip className="tooltip-top" id="detune_id">
                             Detune is to intentionally lower or raise the pitch produced by a musical instrument. Often done to produce sounds not normally possible.
@@ -78,6 +81,7 @@ const PlaySpeed = (props) => {
                 />
                 <OverlayTrigger 
                     placement="top"
+                    delay={{show: 500, hide: 100}}
                     overlay={
                         <Tooltip className="tooltip-top" id="detune_id">
                             Detune is measured in cents, By specifying a detune of 1200, you move up an octave. Specifying a detune of −1200 moves you down an octave.
