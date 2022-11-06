@@ -1,4 +1,6 @@
 import "../../Styles/PopUp.css";
+import { Countdown } from "../Misc/Countdown";
+
 
 /**
  *
@@ -16,6 +18,7 @@ export default function AboutPopUp(props) {
             <div className="popup-inner">
                 <div className="popHeader">
                     <h3>About</h3>
+                    <Countdown />
                     <button className="closeBtn" onClick={handleClick}>
                         <i className="fa-regular fa-circle-xmark fa-xl"></i>{" "}
                     </button>
