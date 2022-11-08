@@ -78,7 +78,6 @@ const Mixes = ({
                 fetch(`${API}/user/${userDetails.user_id}`, requestOptions)
                     .then((response) => response.json())
                     .then((result) => {
-                        console.log(result.available_votes);
                         setVotes(result.available_votes);
                     })
                     .catch((error) => console.log("error", error));

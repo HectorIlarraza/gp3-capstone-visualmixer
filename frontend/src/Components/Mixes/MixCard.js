@@ -73,7 +73,7 @@ const MixCard = ({
             <Card
                 id={effect.user_id}
                 className={"music-card-cover m-2"}
-                onMouseEnter={handleMouseEnter}
+                onMouseOver={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
             >
                 <Card.Img
