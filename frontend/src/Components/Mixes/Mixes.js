@@ -92,6 +92,7 @@ const Mixes = ({
                 setFx(mix.effects_data);
             }
         }
+        
     };
 
     /**
