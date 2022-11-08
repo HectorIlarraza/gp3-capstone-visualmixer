@@ -14,11 +14,12 @@ const MixCard = ({
     albumArt,
     handleShow,
     userDetails,
+    nowPlaying,
 }) => {
     const [hovered, setHovered] = useState(false);
     const [votes, setVotes] = useState(() => effect.totalvotes);
     const [imageSource] = useState(() => albumArt);
-    const [borderStyle, setBorderStyle] = useState('');
+    // const [borderStyle, setBorderStyle] = useState('');
 
     const navigate = useNavigate();
 
@@ -59,7 +60,7 @@ const MixCard = ({
     const handleMouseEnter = (e) => {
         setHovered(true);
         handleUserChange(e.target.parentNode.id);
-        setBorderStyle('playing-border')
+        // setBorderStyle('playing-border')
     };
 
     const handleMouseLeave = () => {
@@ -74,7 +75,7 @@ const MixCard = ({
         <div className={"music-card"}>
             <Card
                 id={effect.user_id}
-                className={`music-card-cover m-2 ${borderStyle}`}
+                className={`music-card-cover m-2 ${nowPlaying === effect.user_id ? 'playing-border' : ''}`}
                 onMouseOver={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
             >
