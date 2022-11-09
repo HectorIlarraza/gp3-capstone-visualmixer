@@ -105,6 +105,32 @@ const hasEffects = async (audio_id, user_id) => {
     }
 };
 
+// GET ALL EFFECTS WITH USERS AND AUDIO INFO FOR SCOREBOARD
+const getAllEffectsForScores = async () => {
+    console.log('we in');
+    try {
+        const result = await db.any(
+            `SELECT 
+	            effects.effects_id,
+                effects.effects_data,
+                effects.totalvotes,
+                audio.date_created,
+                audio.audio_id,
+                audio.audio_key,
+                audio.artist,
+                audio.title,
+                users.username 
+            FROM effects 
+            JOIN audio on effects.audio = audio.audio_id 
+            JOIN users on effects.user_id = users.user_id;`
+        );
+        
+        return result;
+    } catch (err) {
+        return err;
+    }
+};
+
 // EXPORT
 module.exports = {
     getAllUserEffects,
@@ -115,4 +141,5 @@ module.exports = {
     updateEffect,
     hasEffects,
     updateEffectVotes,
+    getAllEffectsForScores
 };

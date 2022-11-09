@@ -7,7 +7,6 @@ import SignUp from "./Components/Nav&Login/signUp";
 import { SplashPage } from "./Components/splashpage";
 import { AudioPlayer } from "./Components/AudioPlayer/AudioPlayer";
 import { Scores } from "./Components/Scores&Winners/Scores";
-import Loading from "./Components/Loading";
 import Login from "./Components/Nav&Login/login";
 import NavBar from "./Components/Nav&Login/navBar";
 import AboutPopUp from "./Components/Nav&Login/AboutPopUp";

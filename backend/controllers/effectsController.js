@@ -12,6 +12,7 @@ const {
     updateEffect,
     hasEffects,
     updateEffectVotes,
+    getAllEffectsForScores
 } = require("../queries/effects");
 
 // GET ONE EFFECT BY USER AND SPECIFIC AUDIO
@@ -104,6 +105,18 @@ effects.get(
         }
     }
 );
+
+//GET ALL MIXES TO CALCULATE WINNERS
+effects.get('/scores', async (req, res) =>{
+    console.log('we in da route');
+    try {
+        const allScores = await getAllEffectsForScores();
+        res.status(200).json(allScores);
+        console.log(allScores);
+    } catch (err) {
+        res.status(404).json({error});
+    }
+})
 
 // EXPORT
 module.exports = effects;
