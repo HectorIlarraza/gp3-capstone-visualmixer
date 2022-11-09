@@ -107,7 +107,6 @@ const hasEffects = async (audio_id, user_id) => {
 
 // GET ALL EFFECTS WITH USERS AND AUDIO INFO FOR SCOREBOARD
 const getAllEffectsForScores = async () => {
-    console.log('we in');
     try {
         const result = await db.any(
             `SELECT 
@@ -124,7 +123,6 @@ const getAllEffectsForScores = async () => {
             JOIN audio on effects.audio = audio.audio_id 
             JOIN users on effects.user_id = users.user_id;`
         );
-        
         return result;
     } catch (err) {
         return err;

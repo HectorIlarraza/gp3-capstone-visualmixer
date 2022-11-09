@@ -1,21 +1,29 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
+
+const API = process.env.REACT_APP_API_URL;
 
 export const Scores = () => {
-    /* 
-    SELECT 
-	effects.effects_id,
-	effects.effects_data,
-	effects.totalvotes,
-	audio.date_created,
-	audio.audio_id,
-	audio.audio_key,
-	audio.artist,
-	audio.title,
-	users.username 
-    FROM effects JOIN audio on effects.audio = audio.audio_id JOIN users on effects.user_id = users.user_id;
+    const [allScores, setAllScores] = useState();
 
+    // grab all scores from DB on component mount
+    useEffect(() => {
+        fetch(`${API}/effects/scores`, {
+            method: "GET",
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+            },
+        })
+        .then(res => res.json())
+        .then (data => setAllScores(data))
+        .catch(err => console.log(err));
+    }, []);
 
-    */
+    useEffect(() => {
+        if (allScores) {
 
-    return <div>Scores</div>;
-}
+        }
+    }, [allScores]);
+
+    return <div>{'glkjdflkg'}</div>;
+};
