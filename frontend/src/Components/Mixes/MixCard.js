@@ -19,7 +19,6 @@ const MixCard = ({
     const [hovered, setHovered] = useState(false);
     const [votes, setVotes] = useState(() => effect.totalvotes);
     const [imageSource] = useState(() => albumArt);
-    // const [borderStyle, setBorderStyle] = useState('');
 
     const navigate = useNavigate();
 
@@ -60,7 +59,6 @@ const MixCard = ({
     const handleMouseEnter = (e) => {
         setHovered(true);
         handleUserChange(e.target.parentNode.id);
-        // setBorderStyle('playing-border')
     };
 
     const handleMouseLeave = () => {
