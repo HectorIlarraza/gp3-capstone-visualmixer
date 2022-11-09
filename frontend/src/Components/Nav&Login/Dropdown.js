@@ -58,7 +58,14 @@ export default function Dropdown() {
                     <a className="dropdown-item" href="/mixer">
                         Make a Mix
                     </a>
-                    <a className="dropdown-item" href='/' onClick={handleSignOut}>
+                    <a className="dropdown-item" href="/scores">
+                        Scores & Winners
+                    </a>
+                    <a
+                        className="dropdown-item"
+                        href="/"
+                        onClick={handleSignOut}
+                    >
                         Signout
                     </a>
                 </div>
