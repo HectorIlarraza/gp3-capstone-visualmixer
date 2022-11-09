@@ -27,6 +27,8 @@ const Mixes = ({
     const [albumArt] = useState(() => generatePhotoArray());
     const [userDetails] = useUser();
     const [todaysTrack] = useTrack();
+    // state to store which card is playing
+    const [nowPlaying, setNowPlaying] = useState();
 
     //states for vote tracking and updating
     // const [available_votes, setAvailable_votes] = useState(0);
@@ -78,7 +80,6 @@ const Mixes = ({
                 fetch(`${API}/user/${userDetails.user_id}`, requestOptions)
                     .then((response) => response.json())
                     .then((result) => {
-                        console.log(result.available_votes);
                         setVotes(result.available_votes);
                     })
                     .catch((error) => console.log("error", error));
@@ -87,12 +88,16 @@ const Mixes = ({
     }, [todaysTrack]); //eslint-disable-line
 
     const handleUserChange = (user) => {
+        console.clear();
+        console.log(user);
+        setNowPlaying(prev => user ? Number(user) : prev);
         for (let mix of effects) {
             //eslint-disable-next-line
             if (mix.user_id == user) {
                 setFx(mix.effects_data);
             }
         }
+        
     };
 
     /**
@@ -158,6 +163,7 @@ const Mixes = ({
                                     albumArt={albumArt[index]}
                                     handleShow={handleShow}
                                     userDetails={userDetails}
+                                    nowPlaying={nowPlaying}
                                 />
                             </Col>
                         ))}

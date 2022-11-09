@@ -14,6 +14,7 @@ const MixCard = ({
     albumArt,
     handleShow,
     userDetails,
+    nowPlaying,
 }) => {
     const [hovered, setHovered] = useState(false);
     const [votes, setVotes] = useState(() => effect.totalvotes);
@@ -72,8 +73,8 @@ const MixCard = ({
         <div className={"music-card"}>
             <Card
                 id={effect.user_id}
-                className={"music-card-cover m-2"}
-                onMouseEnter={handleMouseEnter}
+                className={`music-card-cover m-2 ${nowPlaying === effect.user_id ? 'playing-border' : ''}`}
+                onMouseOver={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
             >
                 <Card.Img
