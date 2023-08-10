@@ -53,3 +53,8 @@ May the best mix win!
 - Fixed issue with volume popover pushing transport controls off the screen on mobile
 - Fixed bug with play when switching from mixer to mixes.  Should not be able to play right away. 
 
+
+
+## Known Issues
+- Effects don't seem to be resetting to a base state when you save a mix...this used to work!
+
