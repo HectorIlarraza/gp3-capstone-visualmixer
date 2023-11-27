@@ -7,12 +7,13 @@ const { ACCESS_TOKEN, PLAYLIST } = process.env;
 const getPlaylistData = async (id) => {
     try {
         let response = await axios.get(
-            `https://api.deezer.com/playlist/${id}?access_token=${ACCESS_TOKEN}`
+            `https://api.deezer.com/playlist/10539515422?access_token=frFWCzAvVbxJ9C8E2G5EvEKmHrik3eGFQbVW8ACvMmtaDmQPTw`
         );
         let data = await response.data;
+        console.log (`DATA from Deezer = ${response}`)
         return data.tracks.data;
     } catch (error) {
-        console.log("getPlaylistData");
+        console.log(`getPlaylistData error - ${error}`);
         return error;
     }
 };
@@ -82,6 +83,9 @@ const postNewTrack = async () => {
     const mixleData = await getDBAudioData();
 
     let newTrack;
+
+    console.log(`hi ${playlistData}`)
+    console.log(`hi ${PLAYLIST}`)
 
     for (let song of playlistData) {
         if (!mixleData.includes(song.id)) {
